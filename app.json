@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "student-management-app",
+    "name": "LearnTomia",
     "slug": "student-management-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/internship.png",
     "scheme": "studentmanagementapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,10 +13,16 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/internship.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.studentmanagementapp",
+      "permissions": [
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "INTERNET"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -28,15 +34,41 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/internship.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
+        }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "node_modules/@expo-google-fonts/manrope/200ExtraLight/Manrope_200ExtraLight.ttf",
+            "node_modules/@expo-google-fonts/manrope/300Light/Manrope_300Light.ttf",
+            "node_modules/@expo-google-fonts/manrope/400Regular/Manrope_400Regular.ttf",
+            "node_modules/@expo-google-fonts/manrope/500Medium/Manrope_500Medium.ttf",
+            "node_modules/@expo-google-fonts/manrope/600SemiBold/Manrope_600SemiBold.ttf",
+            "node_modules/@expo-google-fonts/manrope/700Bold/Manrope_700Bold.ttf",
+            "node_modules/@expo-google-fonts/manrope/800ExtraBold/Manrope_800ExtraBold.ttf"
+          ]
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "ba4865b0-a9d7-4aa0-b4cd-14e3e5db7375"
+      }
     }
   }
 }

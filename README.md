@@ -1,50 +1,83 @@
-# Welcome to your Expo app 👋
+# Student Management System
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native application for managing student profiles with features for adding, editing, searching, and exporting student data.
 
-## Get started
+## Setup Instructions
 
-1. Install dependencies
+### 1. Install Dependencies
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+Clone the repository and install the required dependencies:
 
 ```bash
-npm run reset-project
+git clone <repository-url>
+cd <project-directory>
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Configure API URL
 
-## Learn more
+You need to update the API URL with your current IP address:
 
-To learn more about developing your project with Expo, look at the following resources:
+1. Open a command prompt and run:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+   ```bash
+   ipconfig
+   ```
 
-## Join the community
+   (On macOS/Linux, use `ifconfig` instead)
 
-Join our community of developers creating universal apps.
+2. Note your IPv4 address (e.g., 192.168.1.100)
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+3. Update the API URL in the `constants/api.ts` file:
+   ```typescript
+   // Replace with your IP address
+   export const API_URL = 'http://192.168.1.100:3000';
+   ```
+
+### 3. Start the JSON Server
+
+The application uses JSON Server as a mock backend:
+
+```bash
+npx json-server db.json
+```
+
+This will start the server at http://localhost:3000 (or your configured IP address).
+
+### 4. Start the Application
+
+Start the Expo development server:
+
+```bash
+npm expo start
+```
+
+For the best experience, use Expo Go on your physical device by scanning the QR code. Development builds may not be available.
+
+## Features
+
+### Student Management
+
+- **Add Students**: Record comprehensive student information including:
+
+  - Name
+  - Email
+  - Enrollment Status (Enrolled, Graduated, Alumni)
+  - Profile Photo (with file type and size restrictions)
+  - Phone Number (Formatted for standard Nigerian numbers)
+  - Address
+
+- **Edit Students**: Update any student information as needed
+
+- **Delete Students**: Remove students from the system
+
+### Search & Filter
+
+- **Search**: Quickly find students by searching their information
+- **Filter**: Filter students by enrollment status (Enrolled, Graduated, Alumni)
+- **Sort**: Organize students by name, email, or date added
+
+### Data Management
+
+- **Clear Cache**: Reset application cache when needed
+- **Export Data**: Export student records in JSON format for backup or analysis

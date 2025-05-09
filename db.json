@@ -1,0 +1,30 @@
+{
+  "students": [
+    {
+      "id": "11",
+      "name": "Tomisin",
+      "email": "tomisin@gmail.com",
+      "enrollmentStatus": "enrolled",
+      "phoneNumber": "08123456789",
+      "address": "Nigeria",
+      "dateAdded": "2025-05-08T22:33:46.931Z",
+      "imgSrc": "https://res.cloudinary.com/dh4uqrwhc/image/upload/v1746743768/jj9c0wqeg2rtztdu1aek.jpg"
+    },
+    {
+      "id": "12",
+      "name": "Philip",
+      "email": "philip@gmail.com",
+      "enrollmentStatus": "graduated",
+      "phoneNumber": "08112345678",
+      "address": "Nigeria",
+      "dateAdded": "2025-05-08T22:35:22.314Z",
+      "imgSrc": "https://res.cloudinary.com/dh4uqrwhc/image/upload/v1746743721/alw7igtoshqpnyj7kwpp.png"
+    }
+  ],
+  "metadata": [
+    {
+      "id": "1",
+      "lastStudentNumber": 12
+    }
+  ]
+}

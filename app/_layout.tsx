@@ -1,15 +1,16 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
 
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
+export default function Layout() {
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    ManropeBold: require('../assets/fonts/Manrope-Bold.ttf'),
+    Manrope: require('../assets/fonts/Manrope-Regular.ttf'),
+    ManropeMedium: require('../assets/fonts/Manrope-Medium.ttf'),
+    ManropeSemiBold: require('../assets/fonts/Manrope-SemiBold.ttf'),
+    ManropeLight: require('../assets/fonts/Manrope-Light.ttf'),
+    ManropeExtraBold: require('../assets/fonts/Manrope-ExtraBold.ttf'),
+    ManropeExtraLight: require('../assets/fonts/Manrope-ExtraLight.ttf'),
   });
 
   if (!loaded) {
@@ -18,12 +19,14 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <Stack>
+      <Stack.Screen name='(tabs)' options={{ headerShown: false }} />
+      <Stack.Screen
+        name='edit-student'
+        options={{
+          headerShown: false,
+        }}
+      />
+    </Stack>
   );
 }
